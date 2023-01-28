@@ -1,0 +1,17 @@
+.\ironmancontroller.o: controller\IronManController.c
+.\ironmancontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\ironmancontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\ironmancontroller.o: controller\../GLCD/GLCD.h
+.\ironmancontroller.o: C:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include\LPC17xx.h
+.\ironmancontroller.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm3.h
+.\ironmancontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\ironmancontroller.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h
+.\ironmancontroller.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h
+.\ironmancontroller.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h
+.\ironmancontroller.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h
+.\ironmancontroller.o: C:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include\system_LPC17xx.h
+.\ironmancontroller.o: controller\../GLCD/IronManPicture.h
+.\ironmancontroller.o: controller\../timer/timer.h
+.\ironmancontroller.o: controller\../timer/../music/music.h
+.\ironmancontroller.o: controller\../RIT/RIT.h
+.\ironmancontroller.o: controller\../ADC/adc.h
