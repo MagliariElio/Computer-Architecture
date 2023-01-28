@@ -1,0 +1,66 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000         
+    3 00000000         
+    4 00000000         
+    5 00000000                 AREA             my_area, CODE, READONLY
+    6 00000000         
+    7 00000000                 EXPORT           check_square
+    8 00000000        0 
+                       x       RN               R0          ;argument to check 
+                                                            and result
+    9 00000000        1 
+                       y       RN               R1          ;argument to check
+   10 00000000        2 
+                       r       RN               R2          ;argument to check 
+                                                                
+   11 00000000         
+   12 00000000         check_square
+   13 00000000 E92D 4DF0       STMFD            sp!, {r4-r8, r10-r11, lr}
+   14 00000004         
+   15 00000004 FB00 F000       MUL              x, x, x     ;x = x*x
+   16 00000008 FB01 0001       MLA              x, y, y, x  ;x = y*y + x^2
+   17 0000000C FB02 F202       MUL              r, r, r     ;r = r*r
+   18 00000010         
+   19 00000010 4290            CMP              x, r
+   20 00000012 BF8C 2000       MOVHI            x, #0x0
+   21 00000016 2001            MOVLS            x, #0x1
+   22 00000018         
+   23 00000018 E8BD 8DF0       LDMFD            sp!, {r4-r8, r10-r11, pc}
+   24 0000001C                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\check_square.d -o.\check_square.o -I.\RTE\_Target_1 -IC:\Users\e
+liom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include -IC:\Users\elio
+m\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include --predefine="__
+EVAL SETA 1" --predefine="__UVISION_VERSION SETA 536" --predefine="_RTE_ SETA 1
+" --predefine="LPC175x_6x SETA 1" --predefine="_RTE_ SETA 1" --list=.\check_squ
+are.lst check_square.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+check_square 00000000
+
+Symbol: check_square
+   Definitions
+      At line 12 in file check_square.s
+   Uses
+      At line 7 in file check_square.s
+Comment: check_square used once
+my_area 00000000
+
+Symbol: my_area
+   Definitions
+      At line 5 in file check_square.s
+   Uses
+      None
+Comment: my_area unused
+2 symbols
+339 symbols in table

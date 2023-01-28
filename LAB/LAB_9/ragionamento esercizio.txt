@@ -1,0 +1,157 @@
+A 01 		J 0111 	S 000 	2 00111
+B 1000 	K 101 	T 1 		3 00011
+C 1010 	L 0100 	U 001 	4 00001
+D 100 	M 11 		V 0001 	5 00000
+E 0 		N 10 		W 011 	6 10000
+F 0010 	O 111 	X 1001 	7 11000
+G 110 	P 0110 	Y 1011 	8 11100
+H 0000 	Q 1101 	Z 1100 	9 11110
+I 00 		R 010 	1 01111 	0 11111
+
+Implementare un sistema di decrifratura per messaggi in Morse Code, la funzione dovrà ritornare:
+	- conversione ASCII
+	- numero totale di simboli morse tradotti
+
+
+Il messaggio da tradurre è un vettore di 8 bit unsigned integers con una lunghezza massima di 100 elementi.
+	- Il vettore può contenere solo valori 0, 1, 2, 3, 4
+	- 0 usato per il simbolo punto
+	- 1 usato per il simbolo tratteggiato
+	- 2 indica che /0 della parola			0010
+	- 3 usato per lo spazio					0011
+	- 4 usato per /0 della frase				0100
+
+
+Morse_Code		DCB 	"A", "J", "S", "2"
+			DCB	"B", "K", "T", "3"
+			DCB	"C", "L", "U", "4"
+			DCB	"D", "M", "V", "5"
+			DCB	"E", "N", "W", "6"
+			DCB	"F", "O", "X", "7"
+			DCB	"G", "P", "Y", "8"
+			DCB	"H", "Q", "Z", "9"
+			DCB	"I", "R", "1", "0"
+			
+H	O	L	A		M	U	N	D	O
+48	4F	4C	41	20	4D	55	4E	44	4F
+
+
+simboli convertiti in ASCII code in esadecimale
+				41	4A	53	32
+				42	4B	54	33
+				43	4C	55	34
+				44	4D	56	35
+				45	4E	57	36
+				46	4F	58	37
+				47	50	59	38
+				48	51	5A	39
+				49	52	31	30
+			
+			
+			
+			
+Morse_Value	DCD 0xFFFFFF01, 0xFFFF0111, 0xFFFFF000, 0xFFF00111
+			DCD	0xFFFF1000, 0xFFFFF101, 0xFFFFFFF1, 0xFFF00011
+			DCD	0xFFFF1010, 0xFFFF0100, 0xFFFFF001, 0xFFF00001
+			DCD	0xFFFFF100, 0xFFFFFF11, 0xFFFF0001, 0xFFF00000
+			DCD	0xFFFFFFF0, 0xFFFFFF10, 0xFFFFF011, 0xFFF10000
+			DCD	0xFFFF0010, 0xFFFFF111, 0xFFFF1001, 0xFFF11000
+			DCD	0xFFFFF110, 0xFFFF0110, 0xFFFF1011, 0xFFF11100
+			DCD	0xFFFF0000, 0xFFFF1101, 0xFFFF1100, 0xFFF11110
+			DCD	0xFFFFFF00, 0xFFFFF010, 0xFFF01111, 0xFFF11111
+
+
+
+
+
+
+
+
+
+
+
+ 					
+		 			
+
+E 0 = 0		0000		0
+T 1 = 1		0001		1
+
+I 00 = 0		0000		0
+A 01 = 1		0001		1
+N 10 = 1		0010		2
+M 11 = 2		0011		3
+
+S 000 = 0		0000		0
+R 010 = 1		0010		2
+U 001 = 1		0001		1
+D 100 = 1		0100		4
+K 101 = 2		0101		5
+G 110 = 2		0110		6
+W 011 = 2		0011		3
+O 111 = 3		0111		7
+
+H 0000 = 0		0000		0
+V 0001 = 1		0001		1
+F 0010 = 1		0010		2
+L 0100 = 1		0100		4
+B 1000 = 1		1000		8
+C 1010 = 2		1010		A
+Z 1100 = 2		1100		C
+P 0110 = 2		0110		6
+X 1001 = 2		1001		9
+J 0111 = 3		0111		7
+Q 1101 = 3		1101		D
+Y 1011 = 3		1011		B
+
+5 00000 = 0		0000	0000		00
+4 00001 = 1		0000	0001		01
+6 10000 = 1		0001	0000		10
+3 00011 = 2		0000	0011		03
+7 11000 = 2		0001	1000		18
+2 00111 = 3		0000	0111		07
+8 11100 = 3		0001	1100		1C
+9 11110 = 4		0001	1110		1E
+1 01111 = 4		0000	1111		0F
+0 11111 = 5		0001	1111		1F
+
+
+
+
+
+
+
+30 = '0'				0011 0000		0x00000030
+31 = '1'				0011 0001		0x00000031
+32 = '\0' parola			0011 0010		0x00000032
+33 = ' '				0011 0011		0x00000033
+34 = '\0' frase			0011 0100		0x00000034
+
+
+int translate_morse(...) {
+	for(int i=0; i<vet_input_lenght; i++) {
+		val = retrieve_data(vett_input[i]);
+	}
+}
+
+
+void retrieve_data(string *val) {
+	int var = 0;
+	val <- pulisco i primi 24 bit
+	if(val == 30) {
+			
+	}
+	if(val == 31) {
+		var = 0001
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

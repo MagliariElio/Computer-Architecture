@@ -1,0 +1,69 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000         
+    3 00000000                 AREA             my_area_division, CODE, READONL
+Y
+    4 00000000         
+    5 00000000                 EXPORT           my_division
+    6 00000000         my_division
+    7 00000000 B5F0            STMFD            sp!, {r4-r7, lr}
+    8 00000002         
+    9 00000002 6800            LDR              R0, [R0]
+   10 00000004 6809            LDR              R1, [R1]
+   11 00000006         
+   12 00000006                 IMPORT           __aeabi_fdiv
+   13 00000006 F7FF FFFE       BL               __aeabi_fdiv
+   14 0000000A         
+   15 0000000A BDF0            LDMFD            sp!, {r4-r7, pc}
+   16 0000000C                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\my_division.d -o.\my_division.o -I.\RTE\_Target_1 -IC:\Users\eli
+om\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include -IC:\Users\eliom\
+AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include --predefine="__EV
+AL SETA 1" --predefine="__UVISION_VERSION SETA 536" --predefine="_RTE_ SETA 1" 
+--predefine="LPC175x_6x SETA 1" --predefine="_RTE_ SETA 1" --list=.\my_division
+.lst my_division.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+my_area_division 00000000
+
+Symbol: my_area_division
+   Definitions
+      At line 3 in file my_division.s
+   Uses
+      None
+Comment: my_area_division unused
+my_division 00000000
+
+Symbol: my_division
+   Definitions
+      At line 6 in file my_division.s
+   Uses
+      At line 5 in file my_division.s
+Comment: my_division used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+__aeabi_fdiv 00000000
+
+Symbol: __aeabi_fdiv
+   Definitions
+      At line 12 in file my_division.s
+   Uses
+      At line 13 in file my_division.s
+Comment: __aeabi_fdiv used once
+1 symbol
+337 symbols in table

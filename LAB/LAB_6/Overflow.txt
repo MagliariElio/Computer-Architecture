@@ -1,0 +1,16 @@
+Si ha overflow quando un numero non può essere rappresentato nei N bit, possiamo riassumere nei seguenti casi:
+
+- la somma tra due interi positivi dà un valore negativo
+
+	0111 +		7 + 7 = 14	risultato atteso con 4 bit
+	0111			7 + 7 = -6	risultato operazione con 4 bit	-->	01110 = 14	ma con 5 bit
+	----
+	1110			sapendo che il primo bit più significativo rappresenta il segno abbiamo per forza bisogno di un bit in più
+				per poter rappresentare il valore correttamente
+
+- la somma tra due interi negativi otteniamo un intero positivo
+
+	 1000		1001		 1001 +		-7 - 6 = -13 in 4 bit
+	 0001		0001		 1010			-7 - 6 = 3 	 in 4 bit con carry	--> 10011 = -2^4 + 2^1 + 1 = -13
+	 ----		----		 ----
+	 1001		1010		10011
